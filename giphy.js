@@ -19,5 +19,10 @@ function populateButtons(bandArray, bandClass, bandArea){
   } 
 }
 
+$(document).on("click", ".band-button", function() {
+  $("#bands").empty();
+  $(".band-button").removeClass("active");
+  $this.addClass("active");
+})
 
 })
