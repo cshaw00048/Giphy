@@ -62,6 +62,30 @@ $(document).on("click", ".band-button", function() {
     });
 });
 
+$(document).on("click", ".animal-image", function() {
 
+  var state = $(this).attr("data-state");
 
-})
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  }
+  else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+});
+
+  $("#add-band").on("click", function(event){
+    event.preventDefault();
+    var newBand = $("input").eq(0).val();
+
+    if(newBand.length > 2) {
+      bands.push(newBand);
+    }
+
+    populateButtons(bands, "band-button", "#band-buttons");
+  });
+
+  populateButtons(bands, "band-button", "#band-buttons");
+});
