@@ -7,5 +7,17 @@ $(document).ready(function(){
     "Van Halen", "Aerosmith", "Ozzy Osbourne", "White Lion", "Winger"
 ] 
 
+function populateButtons(bandArray, bandClass, bandArea){
+  $(bandArea).empty();
+
+  for (var i = 0; i < bandArray.length; i++) {
+    var music = $("<button>")
+    music.addClass(bandArray);
+    music.attr("data-type", bandArray[i]);
+    music.text(bandArray[i]);
+    $(bandArea).append(music);
+  } 
+}
+
 
 })
