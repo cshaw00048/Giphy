@@ -23,6 +23,10 @@ $(document).on("click", ".band-button", function() {
   $("#bands").empty();
   $(".band-button").removeClass("active");
   $this.addClass("active");
+
+  var type = $(this).attr("data-type");
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+
 })
 
 })
