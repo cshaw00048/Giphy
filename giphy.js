@@ -35,7 +35,7 @@ $(document).on("click", ".band-button", function() {
       var results = response.data;
 
       for (var i = 0; i = results.length; i++) {
-        var animalDiv = $("<div class=\"band-item\">");
+        var bandDiv = $("<div class=\"band-item\">");
 
         var rating = results[i].rating;
 
@@ -47,9 +47,21 @@ $(document).on("click", ".band-button", function() {
 
         var animated = results [i].images.fixed_height.url;
         var still = results[i].images.fixed_height_still.url;
-      }
-    })
 
-})
+        var bandImage = $("<img>");
+        bandImage.attr("src", still);
+        bandImage.attr("data-still", still);
+        bandImage.attr("data-animate", animated);
+        bandImage.attr("data-state", "still");
+
+        bandDiv.append(p);
+        bandDiv.append(bandImage);
+
+        $("#bands").append(bandDiv);
+      }
+    });
+});
+
+
 
 })
